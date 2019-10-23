@@ -47,13 +47,23 @@ namespace DataStructureForGreedyAlgorithm
         {
             int minCost = int.MaxValue; 
             GreedyTreeNode cheapestGreedyTreeNode = null;
-            foreach (GreedyTreeNode greedyTreeNode in greedyTreeNodes)
+
+          /*  foreach (GreedyTreeNode greedyTreeNode in greedyTreeNodes)
             {
-                if (greedyTreeNode.cost < minCost) {
+                if (greedyTreeNode.cost < minCost)
+                {
                     minCost = greedyTreeNode.cost;
                     cheapestGreedyTreeNode = greedyTreeNode;    // Copy the reference
-                };
-            }
+                }
+            }*/
+
+            for (int i = 0; i < greedyTreeNodes.Count; i++ )
+            {
+                if (greedyTreeNodes[i].cost < minCost) {
+                    minCost = greedyTreeNodes[i].cost;
+                    cheapestGreedyTreeNode = greedyTreeNodes[i];    // Copy the reference
+                }
+            } 
             return cheapestGreedyTreeNode;
         }
         public void addGreedyTreeNode(GreedyTreeNode greedyTreeNode)
